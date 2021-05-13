@@ -1,6 +1,8 @@
 package es.florit.android.domain.base
 
-interface BaseUseCase<PARAMS> {
+import io.reactivex.rxjava3.core.Single
 
-    fun execute(with: PARAMS)
+interface BaseUseCase<PARAMS, RESULT> {
+
+    fun execute(with: PARAMS): Single<RESULT>
 }

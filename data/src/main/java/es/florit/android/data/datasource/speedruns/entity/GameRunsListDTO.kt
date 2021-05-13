@@ -12,10 +12,7 @@ data class GameRunsListDTO(val data: List<GameRunDTO>) {
         @Json(name = "game") val gameId: String,
         val times: GameRunTimes,
         val players: List<GameRunPlayer>
-    ) {
-        val seconds = times.seconds
-        val player = players.first().id
-    }
+    )
 
     @JsonClass(generateAdapter = true)
     data class GameRunTimes(@Json(name = "primary_t") val seconds: Int)
