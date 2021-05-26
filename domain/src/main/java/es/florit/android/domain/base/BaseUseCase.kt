@@ -1,8 +1,8 @@
 package es.florit.android.domain.base
 
-import io.reactivex.rxjava3.core.Single
+import kotlinx.coroutines.flow.Flow
 
 interface BaseUseCase<PARAMS, RESULT> {
 
-    fun execute(with: PARAMS): Single<RESULT>
+    fun execute(with: PARAMS): Flow<RESULT>
 }

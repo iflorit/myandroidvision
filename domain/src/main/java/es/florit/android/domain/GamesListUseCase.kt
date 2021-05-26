@@ -1,15 +1,18 @@
 package es.florit.android.domain
 
 import es.florit.android.domain.base.BaseUseCase
+import es.florit.android.domain.base.Result
 import es.florit.android.domain.entity.GameDomain
 import es.florit.android.domain.repository.SpeedRunsRepositoryContract
-import io.reactivex.rxjava3.core.Single
+import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
 
-class GamesListUseCase : BaseUseCase<GamesListUseCase.GamesListParams, List<GameDomain>> {
+class GamesListUseCase @Inject constructor(
+    var speedRunsRepo: SpeedRunsRepositoryContract
+) : BaseUseCase<GamesListUseCase.GamesListParams, Result<List<GameDomain>, SpeedRunsRepositoryContract.ErrorUtils>> {
 
-    lateinit var speedRunsRepo: SpeedRunsRepositoryContract
 
-    override fun execute(with: GamesListParams): Single<List<GameDomain>> {
+    override fun execute(with: GamesListParams): Flow<Result<List<GameDomain>, SpeedRunsRepositoryContract.ErrorUtils>> {
         return speedRunsRepo.getGamesList()
     }
 
