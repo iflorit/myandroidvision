@@ -31,7 +31,9 @@ class SpeedRunsRepository @Inject constructor() : SpeedRunsRepositoryContract {
         return flow {
             // emit(Result.loading())
             when (val res = apiDatasource.getGamesList()) {
-                is Failure<*> -> TODO()
+                is Failure<*> -> {
+                    println(res)
+                }
                 is Success<*> -> {
                     val success= Success(SpeedRunsDataMapper.gamesListToDomain(res.value as GamesListDTO))
                     emit(success as Result<List<GameDomain>, SpeedRunsRepositoryContract.ErrorUtils> )

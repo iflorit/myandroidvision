@@ -1,5 +1,6 @@
 package es.florit.android.data.datasource.speedruns
 
+import android.util.Log
 import es.florit.android.data.datasource.speedruns.entity.GamePlayerDTO
 import es.florit.android.data.datasource.speedruns.entity.GameRunsListDTO
 import es.florit.android.data.datasource.speedruns.entity.GamesListDTO
@@ -47,7 +48,8 @@ class SpeedRunsDatasource {
                 return Failure(SpeedRunsRepositoryContract.ErrorUtils(errorResponse) as E) as Result<T, E>
             }
         } catch (e: Throwable) {
-            return Failure(SpeedRunsRepositoryContract.ErrorUtils("Unknown Error") as E) as Result<T, E>
+            Log.d("ISMAEL", e.toString())
+            return Failure(SpeedRunsRepositoryContract.ErrorUtils("Unknown: "+e.toString()) as E) as Result<T, E>
         }
     }
 }
