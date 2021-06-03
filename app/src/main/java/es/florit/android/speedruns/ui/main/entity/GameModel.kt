@@ -1,5 +1,7 @@
 package es.florit.android.speedruns.ui.main.entity
 
-class GameModel {
+data class GameModel (
+    val name: String
+){
 
 }
