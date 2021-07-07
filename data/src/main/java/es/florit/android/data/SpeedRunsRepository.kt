@@ -1,5 +1,9 @@
 package es.florit.android.data
 
+import dagger.Binds
+import dagger.Module
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import es.florit.android.data.datasource.speedruns.CacheDatasource
 import es.florit.android.data.datasource.speedruns.SpeedRunsDatasource
 import es.florit.android.data.datasource.speedruns.entity.GamesListDTO
@@ -15,7 +19,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
-
+import javax.inject.Singleton
 
 class SpeedRunsRepository @Inject constructor() : SpeedRunsRepositoryContract {
 

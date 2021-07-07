@@ -19,7 +19,6 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-
     buildTypes {
         release {
             minifyEnabled false
@@ -52,8 +51,9 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
 
-    api project(path: ':data')
-    api project(path: ':domain')
+    api (project(path: ':gameslist')) {
+        exclude module: 'domain'
+    }
 
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.2.0'
@@ -62,11 +62,6 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-
-
-    // implementation "com.google.dagger:hilt-core:2.33-beta"
-    implementation "com.google.dagger:hilt-android:2.31-alpha"
-    kapt "com.google.dagger:hilt-android-compiler:2.31-alpha"
-
-
+    implementation "com.google.dagger:hilt-android:2.37"
+    kapt "com.google.dagger:hilt-android-compiler:2.37"
 }

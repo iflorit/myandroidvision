@@ -1,4 +1,4 @@
-package es.florit.android.speedruns.ui.main
+package es.florit.android.gameslist
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import es.florit.android.domain.GamesListUseCase
 import es.florit.android.domain.base.Success
-import es.florit.android.speedruns.ui.main.entity.GameModel
+import es.florit.android.gameslist.entity.GameModel
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking

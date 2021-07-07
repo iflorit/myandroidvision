@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.GameListFragment">
+    tools:context="es.florit.android.gameslist.GameListFragment">
 
     <TextView
         android:id="@+id/message"

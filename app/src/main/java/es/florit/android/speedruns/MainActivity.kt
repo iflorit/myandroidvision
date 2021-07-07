@@ -1,20 +1,22 @@
 package es.florit.android.speedruns
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import androidx.activity.ComponentActivity
 import dagger.hilt.android.AndroidEntryPoint
-import es.florit.android.speedruns.ui.main.GameListFragment
+import es.florit.android.gameslist.GamesListActivity
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
+class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
-        if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.container, GameListFragment.newInstance())
-                .commitNow()
-        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        startActivity(Intent(this, GamesListActivity::class.java))
     }
 }

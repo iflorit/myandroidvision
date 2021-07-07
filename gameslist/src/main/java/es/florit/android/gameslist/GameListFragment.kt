@@ -1,4 +1,4 @@
-package es.florit.android.speedruns.ui.main
+package es.florit.android.gameslist
 
 import android.os.Bundle
 import android.view.LayoutInflater
