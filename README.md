@@ -1,4 +1,5 @@
-# myandroidvision
+# SpeedRuns
+Here you have some WIP code to test the lastest Android features (at arch. level)
 
 # Milestones
 
