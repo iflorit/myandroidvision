@@ -2,8 +2,10 @@ package es.florit.android.gameslist
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import es.florit.android.speedruns.R
+import dagger.hilt.android.AndroidEntryPoint
+import es.florit.android.speedruns.gameslist.R
 
+@AndroidEntryPoint
 class GamesListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

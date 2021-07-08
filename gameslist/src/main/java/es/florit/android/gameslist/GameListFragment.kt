@@ -5,9 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
-import es.florit.android.speedruns.databinding.GamelistFragmentBinding
+import es.florit.android.speedruns.gameslist.databinding.GamelistFragmentBinding
 
 @AndroidEntryPoint
 class GameListFragment : Fragment() {
@@ -17,7 +17,7 @@ class GameListFragment : Fragment() {
     }
 
     private lateinit var binding: GamelistFragmentBinding
-    private val viewModel: GameListViewModel by lazy { ViewModelProvider(this).get(GameListViewModel::class.java) }
+    private val viewModel by viewModels<GameListViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
